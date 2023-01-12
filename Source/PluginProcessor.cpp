@@ -75,7 +75,7 @@ ObxdAudioProcessor::ObxdAudioProcessor()
     showPresetBar = config->getBoolValue("presetnavigation");
     gui_size = config->getIntValue("gui_size", 1);
     tooltipBehavior = static_cast<Tooltip>(config->getIntValue("tooltip", 1));
-	currentSkin = config->containsKey("skin") ? config->getValue("skin") : "Ilkka Rosma Dark";
+	currentSkin = config->containsKey("skin") ? config->getValue("skin") : "Default Skin";
 	currentBank = "000 - FMR OB-Xa Patch Book";
 
 	scanAndUpdateBanks();
@@ -838,7 +838,7 @@ File ObxdAudioProcessor::getCurrentBankFile() const
 //==============================================================================
 File ObxdAudioProcessor::getDocumentFolder() const
 {
-	File folder = File::getSpecialLocation(File::userDocumentsDirectory).getChildFile("discoDSP").getChildFile("OB-Xd");
+	File folder = File::getSpecialLocation(File::userHomeDirectory).getChildFile(".config").getChildFile("OB-Xx");
 /*
     if (! folder.exists())
     {
