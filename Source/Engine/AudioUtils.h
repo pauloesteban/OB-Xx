@@ -54,7 +54,7 @@ inline static float getPitch(float index)
 
 inline static float tptlpupw(float & state , float inp , float cutoff , float srInv)
 {
-	cutoff = (cutoff * srInv)*juce::float_Pi;
+	cutoff = (cutoff * srInv) * MathConstants<float>::pi;
 	double v = (inp - state) * cutoff / (1 + cutoff);
 	double res = v + state;
 	state = res + v;
@@ -63,7 +63,7 @@ inline static float tptlpupw(float & state , float inp , float cutoff , float sr
 
 inline static float tptlp(float& state,float inp,float cutoff,float srInv)
 {
-	cutoff = tan(cutoff * (srInv)* (juce::float_Pi)) ;
+	cutoff = tan(cutoff * (srInv) * (MathConstants<float>::pi)) ;
 	double v = (inp - state) * cutoff / (1 + cutoff);
 	double res = v + state;
 	state = res + v;
