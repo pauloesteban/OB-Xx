@@ -71,7 +71,7 @@ public:
 		{
 			phaseInc = (bpm/60.0)*syncRate;
 			phase = phaseInc*quaters;
-			phase = (fmod(phase,1)*float_Pi*2-float_Pi);
+			phase = (fmod(phase,1) * MathConstants<float>::pi * 2 - MathConstants<float>::pi);
 		}
 	}
 	inline float getVal()
@@ -92,12 +92,12 @@ public:
 	}
 	inline void update()
 	{
-		phase+=((phaseInc * float_Pi*2 * SampleRateInv));
+		phase+=((phaseInc * MathConstants<float>::pi * 2 * SampleRateInv));
 		sq = (phase>0?1:-1);
 		s = sin(phase);
-		if(phase > float_Pi)
+		if(phase > MathConstants<float>::pi)
 		{
-			phase-=2*float_Pi;
+			phase-=2 * MathConstants<float>::pi;
 			sh = rg.nextFloat()*2-1;
 		}
 
