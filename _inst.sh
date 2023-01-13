@@ -2,7 +2,7 @@
 Ver=`git describe --tags`
 Opt=/opt/OB-Xx-${Ver}
 Loc=/usr/local
-Build=Builds/LinuxMakefile/build/
+Build=Builds/LinuxMakefile/build
 
 echo ""
 echo " 1) $Opt"
@@ -28,8 +28,8 @@ case $Inst in
     test -f $Build/OB-Xx && cp -a $Build/OB-Xx  $Loc/bin
     ;;
  3) test -d ~/.lv2 || mkdir ~/.lv2 ;  cp -a $Build/OB-Xx.lv2 ~/.lv2
-    test -d $Build/OB-Xx.vst3/Contents && mkdir ~/.vst3 >& /dev/null ; cp -a $Build/OB-Xx.vst3 
-    test -f $Build/OB-Xx && mkdir ~/.bin >& /dev/null ; cp -a $Build/OB-Xx  ~/.bin 
+    test -d $Build/OB-Xx.vst3/Contents && mkdir ~/.vst3 >& /dev/null ; cp -a $Build/OB-Xx.vst3 ~/.vst3 
+    test -f $Build/OB-Xx && mkdir ~/.bin >& /dev/null && cp -a $Build/OB-Xx  ~/.bin 
     ;;
  *) echo "ERROR: Wrong choice. Run $0 again manually"
 esac
