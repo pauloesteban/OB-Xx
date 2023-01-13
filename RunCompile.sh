@@ -1,9 +1,7 @@
 #!/bin/bash
 
-test $# -ne 1 && echo "ERROR: JUCE-version needed, eg $0 7.0.4" && exit 1
+test $# -ne 1 && echo "ERROR: JUCE-version needed, eg $0 7.0.3" && exit 1
 test ! -r ../JUCE-$1/Projucer && echo "ERROR: ../JUCE-$1/Projucer doesn't exist" && exit 2
-
-sed -i -e 's/discoDSP/OBXx/g' -e 's/discodsp/obxx/g' -e 's/obxd/obxx/g' -e 's/Obxd/Obxx/g' -e 's/DDSP/OBXX/g' -e 's/OB-Xd/OB-Xx/g' "OB-Xx Linux.jucer" 
 
 # Fix vst2 compile bug :
 cat - > PreJuce.diff << _EOF1
@@ -20,11 +18,11 @@ cat - > PreJuce.diff << _EOF1
      <WINDOWS/>
 _EOF1
 
-patch -p0 < PreJuce.diff
+patch -p0 < PreJuce.diff && rm PreJuce.diff
 
 echo ""
 echo "When Projucer starts make sure to set the global JUCE paths to JUCE-$1 and JUCE-$1/modules"
-echo "Click on the gear icon, scroll down to Plugin Formats and deselect all but LV2 and (optionally) VST3"
+echo "Click on the gear icon, scroll down to Plugin Formats and check that ony LV2 and (optionally) VST3 and Standalone are checked"
 echo ""
 echo "Press Enter to start Projucer"
 read Dummy
@@ -32,7 +30,7 @@ read Dummy
 ../JUCE-$1/Projucer "OB-Xx Linux.jucer"
 
 # Fix problems finding JUCE includes :
-mv Modules M.org && mkdir Modules &&  cp -a  ../JUCE-$1/modules/* Modules && cp -a M.org/* Modules
+mv Modules M.org && mkdir Modules &&  cp -a  ../JUCE-$1/modules/* Modules && cp -a M.org/* Modules && rm -rf M.org
 
 cat - > PostJuce.diff << _EOF2
 --- Modules/juce_gui_extra/misc/juce_AnimatedAppComponent.h~	2022-11-29 13:34:37.000000000 +0100
@@ -66,7 +64,7 @@ cat - > PostJuce.diff << _EOF2
  
 _EOF2
 
-patch -p0 < PostJuce.diff
+patch -p0 < PostJuce.diff && rm PostJuce.diff
 
 CPU=`nproc --ignore=1`
 make -j$CPU -C Builds/LinuxMakefile CONFIG=Release64 && ./_inst.sh
