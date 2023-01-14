@@ -25,6 +25,6 @@ This repository and the source code is under GPL3 license.
 
 Files from Source > Images folder in this commit were created by discoDSP and have Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0) license.
 
-The Themes files in the Resources folder were created by gitterdude and have Attribution-ShareAlike 2.0 Generic (CC BY-SA 3.0) license
+The Themes files in the Resources folder were created by gitterdude and have Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license
 The default skin is inspired by Ilkka Rosma's theme in the discoDSP release.
 
