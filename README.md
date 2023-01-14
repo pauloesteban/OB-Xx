@@ -1,5 +1,5 @@
 # discoDSP OB-Xd / gitterdude OB-Xx
-![](/gitterdude/OB-Xx/blob/main/OB-Xx.jpg?raw=true "OB-Xx")
+![](https://raw.githubusercontent.com/gitterdude/OB-Xx/main/OB-Xx.jpg)
 
 # About
 
