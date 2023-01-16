@@ -1,4 +1,4 @@
-# discoDSP OB-Xd / gitterdude OB-Xx
+# gitterdude OB-Xx (discoDSP OB-Xd)
 ![](https://raw.githubusercontent.com/gitterdude/OB-Xx/main/OB-Xx.jpg)
 
 # About
