@@ -15,7 +15,7 @@
               companyCopyright="GLPv3 discoDSP" companyEmail="none"
               pluginAAXCategory="2048" pluginVSTCategory="kPlugCategSynth"
               displaySplashScreen="1" pluginChannelConfigs="{0,2}" pluginAUMainType="'aumu'"
-              pluginVST3Category="Synth" lv2Uri="https://github.com/gitterdude/obxx/">
+              pluginVST3Category="Synth" lv2Uri="https://github.com/gitterdude/OB-Xx">
   <MAINGROUP id="NZ3n4V" name="OB-Xx">
     <GROUP id="{90740217-84AB-FD0D-FBC4-CA9EA2C68D5E}" name="Source">
       <GROUP id="{E11C29DD-69D5-DA26-5CFF-B65751876DEE}" name="MTS">
