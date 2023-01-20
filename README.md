@@ -9,7 +9,8 @@ While not copying originals, some of the features were taken to a better point. 
 
 Thanks to [2Dat](https://github.com/2DaT/Obxd) for the original OB-Xd and Soshi Studio for giving the rights to continue this wonderful product. Also thanks to [KVR artists for creating some amazing skins!](https://www.kvraudio.com/forum/viewtopic.php?f=1&t=471926)
 
-As a side note, discoDSP claims copyright on the OB-Xd themes, so they can't be used in a free/libre/open source version of this program.
+As a side note, discoDSP now claims copyright on the original OB-Xd themes, so they can't be distributed in a free/libre/open source version of this program.
+The default theme in Resources, and in the screenshot above, was created by gitterdude.
 
 # Building
 
