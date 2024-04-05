@@ -838,7 +838,7 @@ File ObxdAudioProcessor::getCurrentBankFile() const
 //==============================================================================
 File ObxdAudioProcessor::getDocumentFolder() const
 {
-	File folder = File::getSpecialLocation(File::userHomeDirectory).getChildFile(".config").getChildFile("OB-Xx");
+	File folder = File::getSpecialLocation(File::userHomeDirectory).getChildFile("OB-Xe");
 /*
     if (! folder.exists())
     {
